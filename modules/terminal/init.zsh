@@ -102,16 +102,13 @@ function set-titles-with-path {
   fi
 }
 
-# Don't override precmd/preexec; append to hook array.
-autoload -Uz add-zsh-hook
-
 # Sets the tab and window titles before the prompt is displayed.
 function set-titles-precmd {
   if zstyle -t ':prezto:module:terminal' auto-title; then
     set-titles-with-path
   fi
 }
-add-zsh-hook precmd set-titles-precmd
+precmd_functions+=(set-titles-precmd)
 
 # Sets the tab and window titles before command execution.
 function set-titles-preexec {
@@ -119,5 +116,5 @@ function set-titles-preexec {
     set-titles-with-command "$2"
   fi
 }
-add-zsh-hook preexec set-titles-preexec
+preexec_functions+=(set-titles-preexec)
 
