@@ -14,8 +14,16 @@ fi
 # Auto Start
 #
 
-if ( [[ -z "$SSH_CLIENT" ]] || zstyle -t ':prezto:module:screen' remote ) &&
-    ( [[ -z "$STY" ]] && zstyle -t ':prezto:module:screen' auto-start ); then
+zstyle -t ':prezto:module:screen:auto-start' on-remote \
+  && _screen_auto_start_on_remote='yes'
+zstyle -t ':prezto:module:screen' auto-start \
+  && _screen_auto_start='yes'
+
+if [[ -n "$STY" ]]; _screen_is_started='yes'
+if [[ -n "$SSH_CLIENT" ]]; _screen_is_on_remote='yes'
+
+( is-false "$_screen_is_on_remote" || is-true "$_screen_auto_start_on_remote") \
+&& ( is-false "$_screen_is_started" && is-true "$_screen_auto_start" ) && {
   session="$(
     screen -list 2> /dev/null \
       | sed '1d;$d' \
@@ -27,7 +35,7 @@ if ( [[ -z "$SSH_CLIENT" ]] || zstyle -t ':prezto:module:screen' remote ) &&
   else
     exec screen -a -A -U -D -R -m "$SHELL" -l
   fi
-fi
+}
 
 #
 # Aliases

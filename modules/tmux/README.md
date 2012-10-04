@@ -28,7 +28,7 @@ SSH access.
 
 It is possible to re-enable auto-start for SSH sessions with
 
-    zstyle ':prezto:module:tmux' remote 'yes'
+    zstyle ':prezto:module:tmux:auto-start' on-remote 'yes'
 
 Aliases
 -------

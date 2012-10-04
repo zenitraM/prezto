@@ -21,7 +21,7 @@ SSH access.
 
 It is possible to re-enable auto-start for SSH sessions with
 
-    zstyle ':prezto:module:screen' remote 'yes'
+    zstyle ':prezto:module:screen:auto-start' on-remote 'yes'
 
 Aliases
 -------

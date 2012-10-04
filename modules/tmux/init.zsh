@@ -15,7 +15,7 @@ fi
 # Auto Start
 #
 
-if ( [[ -z "$SSH_CLIENT" ]] || zstyle -t ':prezto:module:tmux' remote ) &&
+if ( [[ -z "$SSH_CLIENT" ]] || zstyle -t ':prezto:module:tmux:auto-start' on-remote ) &&
     ( [[ -z "$TMUX" ]] && zstyle -t ':prezto:module:tmux' auto-start ); then
   tmux_session='#Prezto'
 

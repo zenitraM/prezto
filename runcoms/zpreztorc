@@ -82,7 +82,7 @@ zstyle ':prezto:module:prompt' theme 'sorin'
 # zstyle ':prezto:module:screen' auto-start 'yes'
 
 # Allow auto-start with an SSH connection
-# zstyle ':prezto:module:screen' remote 'yes'
+# zstyle ':prezto:module:screen:auto-start' on-remote 'yes'
 
 #
 # GPG-Agent
@@ -129,4 +129,4 @@ zstyle ':prezto:module:terminal' auto-title 'yes'
 # zstyle ':prezto:module:tmux' auto-start 'yes'
 
 # Allow auto-start with an SSH connection
-# zstyle ':prezto:module:tmux' remote 'yes'
+# zstyle ':prezto:module:tmux:auto-start' on-remote 'yes'
