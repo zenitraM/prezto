@@ -48,6 +48,9 @@ zstyle ':prezto:module:editor' keymap 'emacs'
 # Git
 #
 
+# Auto deactivate git-info when SIGINT is received.
+zstyle ':prezto:module:git:info' auto-deactivate 'yes'
+
 # Ignore submodules when they are 'dirty', 'untracked', 'all', or 'none'.
 # zstyle ':prezto:module:git:status:ignore' submodules 'all'
 

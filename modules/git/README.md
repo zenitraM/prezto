@@ -8,6 +8,16 @@ Git **1.7.2** is the [minimum required version][7].
 Settings
 --------
 
+### Git-Info
+
+To auto deactivate repository information inside of the prompt when SIGINT is
+received, <kbd>when Conctrol-C</kbd> is pressed, add the following to
+*zpreztorc*.
+
+    zstyle ':prezto:module:git:info' auto-deactivate 'yes'
+
+To re-enable repository information inside of the prompt for the current repository, execute `git-info on`.
+
 ### Log
 
 The format of the [git-log][8] output is configurable via the following style,
